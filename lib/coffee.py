@@ -14,10 +14,10 @@ class Coffee:
         if isinstance(value, str) and value.lower() in self.VALID_SIZES:
             self._size = value.lower()
         else:
-            print("size must be small, medium, or large.")
+            print("size must be small, medium, or large")
             if not hasattr(self, "_size"):
                 self._size = "small"
 
     def tip(self, amount=1):
         self.price += float(amount)
-        print("This coffee is delicious, here’s a tip!")
+        print("This coffee is delicious, here's a tip!")
