@@ -1,4 +1,22 @@
-#!/usr/bin/env python3
-
 class Coffee:
-    pass
+    VALID_SIZES = ["small", "medium", "large"]
+
+    def __init__(self, size="small", price=0.0):
+        self.size = size
+        self.price = float(price)
+
+    @property
+    def size(self):
+        return self._size
+
+    @size.setter
+    def size(self, value):
+        if isinstance(value, str) and value.lower() in self.VALID_SIZES:
+            self._size = value.lower()
+        else:
+            print("Size must be small, medium, or large")
+            if not hasattr(self, "_size"):
+                self._size = "small"
+
+    def tip(self, amount):
+        self.price += float(amount)
