@@ -20,4 +20,3 @@ class Coffee:
 
     def tip(self, amount=1):
         self.price += float(amount)
-        print("This coffee is delicious, here's a tip!")
